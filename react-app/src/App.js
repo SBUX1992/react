@@ -122,7 +122,9 @@ function App() {
       <Create
         onCreate={(_title, _body) => {
           const newTopic = { id: nextId, title: _title, body: _body };
-          setTopics(topics);
+          const newTopics = [...topics];
+          newTopics.push(newTopic);
+          setTopics(newTopics);
         }}
       ></Create>
     );
